@@ -1,0 +1,15 @@
+.payfi-configure .button {
+  float: right;
+}
+
+.payfi-section .payfi-configure .button:before {
+  content: 'Configure';
+}
+
+.payfi-section.active .payfi-configure .button:before {
+  content: 'Close';
+}
+
+.payfi-section .heading {
+  background: url('../images/payfi-logo.png') no-repeat 0 50% / 18rem auto; padding-left: 20rem;
+}

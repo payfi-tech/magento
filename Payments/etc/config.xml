@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+	<default>
+		<payment>
+			<payfipayment>
+				<active>1</active>
+				<model>Payfi\Payments\Model\Payment\PayfiPayment</model>
+				<order_status>pending</order_status>
+				<title>Payfi</title>
+				<can_use_checkout>1</can_use_checkout>
+				<allowspecific>0</allowspecific>
+				<group>offline</group>
+				<is_gateway>1</is_gateway>
+			</payfipayment>
+		</payment>
+	</default>
+</config>
