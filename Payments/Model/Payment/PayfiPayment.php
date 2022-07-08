@@ -32,7 +32,7 @@ class PayfiPayment extends \Magento\Payment\Model\Method\AbstractMethod
     ) {
        
    $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
-   $active = $objectManager->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/payfipayment/active');
+   $active = $objectManager->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/payfi/active');
            
                    if($active)
                    {

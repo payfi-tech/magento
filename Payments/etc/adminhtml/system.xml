@@ -7,6 +7,7 @@
 				<field id="active" type="select" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
 					<label>Enabled</label>
 					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+					<config_path>payment/payfi/active</config_path>
 				</field>
 				<field id="test_mode" showInDefault="1" showInStore="0" showInWebsite="1" sortOrder="10" translate="label" type="select"  >
                                       <label>Test Mode</label>
