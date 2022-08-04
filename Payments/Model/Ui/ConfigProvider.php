@@ -46,19 +46,19 @@ final class ConfigProvider implements ConfigProviderInterface
   {
     $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
 
-    if ( $objectManager->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/payfi/test_mode')) {
-      $public_key = $objectManager->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/payfi/pb_key', $this->scopeStore);
+    if ( $objectManager->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/payfipayment/test_mode')) {
+      $public_key = $objectManager->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/payfipayment/pb_key', $this->scopeStore);
       
     } else {
-      $public_key =  $objectManager->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/payfi/live_pb_key', $this->scopeStore);
+      $public_key =  $objectManager->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/payfipayment/live_pb_key', $this->scopeStore);
     }
     return [
       'payment' => [
-        'payfipayment' => [
+        'payfi' => [
           'pb_key' => $public_key,
-          'modal_title' =>  $objectManager->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/payfi/modal_title', $this->scopeStore),
-          'modal_desc' =>  $objectManager->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/payfi/modal_desc', $this->scopeStore),
-          'test_mode' => $objectManager->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/payfi/test_mode', $this->scopeStore),
+          'modal_title' =>  $objectManager->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/payfipayment/modal_title', $this->scopeStore),
+          'modal_desc' =>  $objectManager->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/payfipayment/modal_desc', $this->scopeStore),
+          'test_mode' => $objectManager->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/payfipayment/test_mode', $this->scopeStore),
         ]
       ]
     ];
