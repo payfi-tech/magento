@@ -33,7 +33,7 @@ define(
       },
 
       getPayfiConfigValue: function (key) {
-        return this.config.payment.payfi[key] || '';
+        return this.config.payment.payfipayment[key] || '';
       },
 
       callback: function (res) {
@@ -54,7 +54,7 @@ define(
           custom_title: this.getPayfiConfigValue('modal_title'),
           customer_email: this.getCustomerEmail(),
           PBFPubKey: this.getPayfiConfigValue('pb_key'),
-          LivePubKey: this.getPayfiConfigValue('live_pb_key'),
+         // LivePubKey: this.getPayfiConfigValue('live_pb_key'),
           txref:  this.quoteRef(),
           callback: this.callback.bind(this)
         };
@@ -67,9 +67,13 @@ define(
          var _this = this;
           
          let amount= _this.buildConfig().amount;
+         let PBFPubKey = _this.buildConfig().PBFPubKey;
+        // let LivePubKey = _this.buildConfig().LivePubKey;
          let ref= _this.buildConfig().txref;
          console.log("REF "+ref)
          console.log("AMOUNT "+amount)
+   
+  
         
         if (test) {
 
@@ -79,8 +83,8 @@ define(
           
           const payfi = new Payfi(
             {
-              //apiKey: _this.buildConfig().LivePubKey,
-                apiKey: 'pk_4435cecb-96b3-495e-bcc9-69257b1dce5b',
+              apiKey: _this.buildConfig().PBFPubKey,
+
                           callback: reference => {
                  //document.getElementById("btn").removeAttribute("disabled");
                   console.log('callback called', reference);
@@ -112,12 +116,13 @@ define(
           
      
           let disabled = false
-        
+         
 
           const payfi = new Payfi(
             {
-                //apiKey: _this.buildConfig().LivePubKey,
-                apiKey: 'pk_4435cecb-96b3-495e-bcc9-69257b1dce5b',
+             apiKey: _this.buildConfig().PBFPubKey,
+             
+
               callback: reference => {
                   //document.getElementById("btn").removeAttribute("disabled");
                   console.log('callback called', reference);
@@ -128,8 +133,8 @@ define(
               }
             }
           );
-          console.log("Live")
-            console.log(payfi);
+         // console.log("Live")
+   
 
           setTimeout(() =>{
                  payfi.pay({ amount:amount, reference:ref })
