@@ -1,0 +1,32 @@
+{
+    "name": "payfi/module-payments",
+    "description": "Payfi Payment gateway for accepting credit card, debit card and bank account payments on your store",
+    "license": "GPL-3.0",
+    "authors": [
+        {
+            "name": "Kpono Akpabio",
+            "email": "kingkpono@gmail.com"
+        }
+    ],
+    "readme": "./README.md",
+    "keywords": [
+        "magento",
+        "magento2",
+        "magento2-module"
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=7.4.0",
+        "magento/module-payment": "100.1.*",
+        "magento/module-checkout": "100.1.*",
+        "magento/module-sales": "100.1.*"
+    },
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Payfi\\Payments\\": ""
+        }
+    }
+}
