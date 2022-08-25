@@ -14,7 +14,7 @@
         "magento2",
         "magento2-module"
     ],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "require": {
         "php": ">=7.4.0",
         "magento/module-payment": "100.1.*",
